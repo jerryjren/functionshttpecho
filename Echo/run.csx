@@ -6,6 +6,6 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogge
 
     object requestBody = await req.Content.ReadAsAsync<object>();
 
-    // return new HttpResponseMessage(HttpStatusCode.OK);
-    return Ok($"Hello {req.Query.name}");
+    return new HttpResponseMessage(HttpStatusCode.OK);
+    // return Ok($"Hello {req.Query.name}");
 }
