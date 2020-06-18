@@ -2,7 +2,7 @@ using System.Net;
 
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 {
-    log.LogInformation($"Echo : {req.Query.name}");
+    log.LogInformation($"Echo : {req.Query["name"]}");
 
     object requestBody = await req.Content.ReadAsAsync<object>();
 
